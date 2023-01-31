@@ -13,11 +13,11 @@ def get_info():
     # TODO
 
 
-def get_info_redirect():
+def get_topping():
     # TODO
 
 
-def get_topping():
+def get_info_redirect():
     # TODO
 
 
