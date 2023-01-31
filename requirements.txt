@@ -1,0 +1,8 @@
+Flask==2.2.2
+requests==2.28.1
+click
+Jinja2
+scipy
+pandas
+pyjnius
+nltk
