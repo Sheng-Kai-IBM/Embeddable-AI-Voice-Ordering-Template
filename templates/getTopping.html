@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>La AI Pizza Plaza</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet"/>
+        <link rel="stylesheet" href="static/css/animate.css"/>
+        <link rel="stylesheet" href="static/css/owl.carousel.min.css"/>
+        <link rel="stylesheet" href="static/css/owl.theme.default.min.css"/>
+        <link rel="stylesheet" href="static/css/aos.css"/>
+        <link rel="stylesheet" href="static/css/style.css"/>
+        <link rel="stylesheet" href="static/css/flaticon.css">
+        <link rel="stylesheet" href="static/css/icomoon.css">
+    </head>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/"><span class="flaticon-pizza-1 mr-1"></span>La AI Pizza<br><small>Plaza</small></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="https://cognitiveclass.ai/courses/course-v1:IBM+GPXX0E8TEN+v1" target="_blank" class="nav-link">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <body>
+        <audio autoplay>
+            <source src="/play_local_wav" type="audio/wav"/>
+        </audio>
+        <section class="home-slider owl-carousel img" style="background-image: url(static/images/bg_1.jpg); background-size: cover;">
+            <div class="slider-item">
+                <div class="overlay"></div>
+                <div class="container">
+                    <div class="row slider-text justify-content-center align-items-center" >
+                        <div class="col-md-6 col-sm-12 ftco-animate">
+                            <p><span class="subheading">What kind of pizza do you want?</span></p>
+                            <div class="sub-container" id="requests">
+                                <button class="btn btn-primary p-3 px-xl-4 py-xl-3" id="requestButton">Place Your Order</button>
+                            </div>
+                            <div class="sub-container" id="buttons" style="display: none;">
+                                <button class="btn btn-white p-3 px-xl-4 py-xl-3" id="startButton">Start Recording</button>
+                                <button class="btn btn-white p-3 px-xl-4 py-xl-3" id="stopButton">Stop Recording</button>
+                                <button class="btn btn-white p-3 px-xl-4 py-xl-3" id="uploadRecordingButton">Continue</button>
+                            </div>
+                            <div>
+                                <ul class="list-unstyled" id="ul"></ul>
+                            </div>
+                            <div id="recordingMsg" style="display: none;">
+                                <p style="font-size:105%;">Recording!</p>
+                            </div>
+                            <div id="uploadRecordingMsg" style="display: none;">
+                                <p style="font-size:105%;">Audio uploading!</p>
+                            </div>
+                            <div class="container" style="display: none;">
+                                <div class="row">
+                                      <div class="col-md-8">
+                                          <form class="form-inline" action="/get_topping_upload_wav" method="POST" enctype="multipart/form-data">
+                                              <input class="btn btn-white p-3 px-xl-4 py-xl-3" type="file" name="info_upload_wav">
+                                              <button class="btn btn-primary my-2 my-sm-0" type="submit" id="uploadButton">Continue</button>
+                                          </form>
+                                      </div>
+                                </div>
+                            </div>
+                            <div id="uploadMsg" style="display: none;">
+                                <p style="font-size:105%;">Audio uploading!</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 ftco-animate">
+                            <img src="static/images/pizza_size.png" class="img-fluid" alt=""/>
+                            <img src="static/images/topping.png" class="img-fluid" alt=""/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+    <footer class="ftco-footer ftco-section img">
+        <div class="overlay"></div>
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-6 col-md-6 mb-3 mb-md-3">
+                        <div class="ftco-footer-widget mb-3">
+                            <h2 class="ftco-heading-2">About CogntiveClass.ai</h2>
+                            <p>We're glad to have you here to explore this brilliant new world of Data Science and Cognitive Computing together. To get started, head to our site and feel free to ask questions to our Student Advisor chatbot or explore our course catalog directly. All our courses are free.</p>
+                            <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                                <li class="ftco-animate"><a href="https://cognitiveclass.ai/" target="_blank" class="icon-web"></a></li>
+                                <li class="ftco-animate"><a href="https://www.youtube.com/user/TheBigDataUniversity" target="_blank" class="icon-youtube"></a></li>
+                                <li class="ftco-animate"><a href="https://twitter.com/cognitiveclass" target="_blank" class="icon-twitter"></a></li>
+                                <li class="ftco-animate"><a href="https://www.facebook.com/cognitiveclass" target="_blank" class="icon-facebook"></a></li>
+                                <li class="ftco-animate"><a href="https://www.linkedin.com/school/cognitiveclass/" target="_blank" class="icon-linkedin"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 mb-3 mb-md-3">
+                        <div class="ftco-footer-widget mb-3">
+                            <h2 class="ftco-heading-2">Want to learn how to build this app?</h2>
+                            <div class="block-23 mb-3">
+                            <ul>
+                                <li class="nav-item"><a href="https://cognitiveclass.ai/courses/course-v1:IBM+GPXX0E8TEN+v1" target="_blank" class="nav-link"><span class="icon icon-web"></span>Click here to the Guided Project</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> IBM Corporation. All rights reserved | This template supports by <a href="https://colorlib.com" target="_blank">Colorlib</a> | Powered by  <img src="static/images/sn_web.png" class="img-fluid" alt=""/></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        let id = val => document.getElementById(val),
+            log = console.log.bind(console),
+            ul = id("ul"),
+            requestButton = id("requestButton"),
+            startButton = id("startButton"),
+            stopButton = id("stopButton"),
+            uploadButton = id("uploadButton"),
+            uploadRecordingButton = id("uploadRecordingButton"),
+            media,
+            stream,
+            recorder,
+            audioChunks;
+        requestButton.onclick = e =>
+        {
+            let mediaOptions =
+            {
+                audio:
+                {
+                    tag: "audio",
+                    type: "audio/wav",
+                    ext: ".wav",
+                    category: {audio: true, video:false}
+                }
+            };
+            media = mediaOptions.audio;
+            id("requests").style.display = "none";
+            id("buttons").style.display = "inherit";
+            navigator.mediaDevices.getUserMedia(media.category).then(_stream =>
+            {
+                stream = _stream
+                recorder = new RecordRTC(stream,
+                {
+                    type: "audio",
+                    recorderType: RecordRTC.StereoAudioRecorder, // force for all browsers generate audio/wav
+                    numberOfAudioChannels: 2
+                });
+                log("ready for recording");
+            }).catch(log);
+        }
+        startButton.onclick = e =>
+        {
+            document.getElementById("recordingMsg").style.display = "block";
+            audioChunks=[];
+            startButton.disabled = true;
+            stopButton.disabled = false;
+            recorder.startRecording();
+            log("start record");
+        }
+        stopButton.onclick = e =>
+        {
+            document.getElementById("recordingMsg").style.display = "none";
+            startButton.disabled = false;
+            stopButton.disabled = true;
+            recorder.stopRecording(stopRecordingCallback);
+            log("end record");
+        }
+        uploadRecordingButton.onclick = e =>
+        {
+            document.getElementById("uploadRecordingMsg").style.display = "block";
+            uploadFile();
+        }
+        uploadButton.onclick = e =>
+        {
+            document.getElementById("uploadMsg").style.display = "block";
+        }
+        function stopRecordingCallback()
+        {
+            audioChunks.push(recorder.getBlob());
+            displayFile();
+        }
+        function displayFile()
+        {
+            let blob = new Blob(audioChunks, {type: media.type}),
+                url = URL.createObjectURL(blob),
+                li = document.createElement("li"),
+                audio = document.createElement(media.tag);
+            audio.controls = true;
+            audio.src = url;
+            li.appendChild(audio);
+            ul.appendChild(li);
+        }
+        function uploadFile()
+        {
+            let blob = new Blob(audioChunks, {type: media.type}),
+                data = new FormData();
+            data.set("topping_record_wav", blob, `topping_record${media.ext}`);
+            fetch("/get_topping_record_wav",
+            {
+                method: "POST",
+                body: data
+            })
+            .then(response => {log(response.status);})
+            .then(response => {location.href = "get_topping_redirect";});
+        }
+    </script>
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/jquery.easing.1.3.js"></script>
+    <script src="static/js/jquery.waypoints.min.js"></script>
+    <script src="static/js/jquery.stellar.min.js"></script>
+    <script src="static/js/owl.carousel.min.js"></script>
+    <script src="static/js/jquery.magnific-popup.min.js"></script>
+    <script src="static/js/aos.js"></script>
+    <script src="static/js/scrollax.min.js"></script>
+    <script src="static/js/main.js"></script>
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+</html>

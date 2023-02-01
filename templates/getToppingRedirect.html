@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>La AI Pizza Plaza</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet"/>
+        <link rel="stylesheet" href="static/css/animate.css"/>
+        <link rel="stylesheet" href="static/css/owl.carousel.min.css"/>
+        <link rel="stylesheet" href="static/css/owl.theme.default.min.css"/>
+        <link rel="stylesheet" href="static/css/aos.css"/>
+        <link rel="stylesheet" href="static/css/style.css"/>
+        <link rel="stylesheet" href="static/css/flaticon.css">
+        <link rel="stylesheet" href="static/css/icomoon.css">
+    </head>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/"><span class="flaticon-pizza-1 mr-1"></span>La AI Pizza<br><small>Plaza</small></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="https://cognitiveclass.ai/courses/course-v1:IBM+GPXX0E8TEN+v1" target="_blank" class="nav-link">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <body>
+        <audio autoplay>
+            <source src="/play_local_wav" type="audio/wav">
+        </audio>
+        <section class="home-slider owl-carousel img" style="background-image: url(static/images/bg_1.jpg); background-size: cover;">
+            <div class="slider-item">
+                <div class="overlay"></div>
+                <div class="container">
+                    <div class="row slider-text align-items-center">
+                        <div class="col-md-6 col-sm-12 ftco-animate">
+                            <p><span class="subheading">We noticed you asked for a </span><p style="color:yellow;"><strong>{{pizzaSize}} pizza</strong></p><span class="subheading"> with the following topping: </span></p>
+                            <ul class="block-27" style="list-style-type:square">
+                                {% for topping in pizzaTopping %}
+                                    <li><p style="color:yellow;"><strong>{{topping}}</strong></p></li>
+                                {% endfor %}
+                            </ul>
+                            <form style="display: inline;" action="/get_topping" method="POST">
+                                <input class="btn btn-white p-3 px-xl-4 py-xl-3" type="submit" value="Recording Again"/>
+                            </form>
+                            <form style="display: inline;" action="/get_order" method="POST">
+                                <input class="btn btn-primary p-3 px-xl-4 py-xl-3" type="submit" value="Continue">
+                            </form>
+                        </div>
+                        <div class="col-md-6 ftco-animate">
+                            <img src="static/images/image_3.jpg" class="img-fluid" alt=""/>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </body>
+    <footer class="ftco-footer ftco-section img">
+        <div class="overlay"></div>
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-6 col-md-6 mb-3 mb-md-3">
+                        <div class="ftco-footer-widget mb-3">
+                            <h2 class="ftco-heading-2">About CogntiveClass.ai</h2>
+                            <p>We're glad to have you here to explore this brilliant new world of Data Science and Cognitive Computing together. To get started, head to our site and feel free to ask questions to our Student Advisor chatbot or explore our course catalog directly. All our courses are free.</p>
+                            <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                                <li class="ftco-animate"><a href="https://cognitiveclass.ai/" target="_blank" class="icon-web"></a></li>
+                                <li class="ftco-animate"><a href="https://www.youtube.com/user/TheBigDataUniversity" target="_blank" class="icon-youtube"></a></li>
+                                <li class="ftco-animate"><a href="https://twitter.com/cognitiveclass" target="_blank" class="icon-twitter"></a></li>
+                                <li class="ftco-animate"><a href="https://www.facebook.com/cognitiveclass" target="_blank" class="icon-facebook"></a></li>
+                                <li class="ftco-animate"><a href="https://www.linkedin.com/school/cognitiveclass/" target="_blank" class="icon-linkedin"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 mb-3 mb-md-3">
+                        <div class="ftco-footer-widget mb-3">
+                            <h2 class="ftco-heading-2">Want to learn how to build this app?</h2>
+                            <div class="block-23 mb-3">
+                            <ul>
+                                <li class="nav-item"><a href="https://cognitiveclass.ai/courses/course-v1:IBM+GPXX0E8TEN+v1" target="_blank" class="nav-link"><span class="icon icon-web"></span>Click here to the Guided Project</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> IBM Corporation. All rights reserved | This template supports by <a href="https://colorlib.com" target="_blank">Colorlib</a> | Powered by  <img src="static/images/sn_web.png" class="img-fluid" alt=""/></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/jquery.easing.1.3.js"></script>
+    <script src="static/js/jquery.waypoints.min.js"></script>
+    <script src="static/js/jquery.stellar.min.js"></script>
+    <script src="static/js/owl.carousel.min.js"></script>
+    <script src="static/js/jquery.magnific-popup.min.js"></script>
+    <script src="static/js/aos.js"></script>
+    <script src="static/js/scrollax.min.js"></script>
+    <script src="static/js/main.js"></script>
+</html>
